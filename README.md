@@ -1,4 +1,3 @@
-CS496_HW
+CS496 Homework
 ========
-
-Homework for CS496 at Oregon State University 
+Homework for the CS496 class (Mobile and Cloud Software Development) at Oregon State University 
