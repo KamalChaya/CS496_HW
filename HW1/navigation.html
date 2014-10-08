@@ -10,7 +10,7 @@
   </head>  
 
   <body>
-    <div data-role="page">
+    <div data-role="page" id="navpage">
       
       <div data-role="header">
 	<h1>Navigation page</h1>
@@ -18,9 +18,42 @@
 
       <div data-role="main" class="ui-content">
 	<p>Loreum ipsum</p>
+	<a href="#galpage" class = "ui-btn">Go to gallery</a>
+	<a href="#datapage" class = "ui-btn">Go to data entry page</a>
       </div>	
 
     </div>  
+
+    <div data-role="page" id="galpage">
+      
+      <div data-role="header">
+	<h1>Gallery</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+	<img src = "http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image1.jpg">
+	<img src = "http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image2.jpg">
+	<img src = "http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image3.jpg">
+	<img src = "http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image4.jpg">
+	<a href="#navpage" class = "ui-btn">Return</a>
+      </div>	
+
+    </div>  
+
+    <div data-role="page" id="datapage">
+      
+      <div data-role="header">
+	<h1>Data Entry Page</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+	<p>Data entry page</p>
+	<a href="#navpage" class = "ui-btn">Return</a>
+      </div>	
+
+    </div>  
+
+
   </body>
 
 </html>
