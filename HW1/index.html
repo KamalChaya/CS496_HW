@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script> 
+    <title>CS496 HW1</title>
+  </head>  
+
+  <body>
+    <div data-role="page" id="navpage">
+      
+      <div data-role="header">
+	<h1>Navigation page</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+	<p>Loreum ipsum</p>
+	<a href="#galpage" class = "ui-btn">Go to gallery</a>
+	<a href="#datapage" class = "ui-btn">Go to data entry page</a>
+      </div>	
+
+    </div>  
+
+    <div data-role="page" id="galpage">
+      
+      <div data-role="header">
+	<h1>Gallery</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+	<a href="#image1" data-rel="popup" data-position-to="window" data-transition="fade">
+	  <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image1.jpg" alt="image1" style="width:30%">
+	</a>
+
+	<a href="#image2" data-rel="popup" data-position-to="window" data-transition="fade">
+	  <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image2.jpg" alt="image2" style="width:30%">
+	</a>
+
+	<a href="#image3" data-rel="popup" data-position-to="window" data-transition="fade">
+	  <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image3.jpg" alt="image3" style="width:30%">
+	</a>
+
+	<a href="#image4" data-rel="popup" data-position-to="window" data-transition="fade">
+	  <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image4.jpg" alt="image4" style="width:30%">
+	</a>
+
+	<div data-role="popup" id="image1" data-overlay-theme="b" data-theme="b" data-corners="false">
+	  <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	      <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image1.jpg" style="max-height:512px;" alt="image1">
+	</div>
+  
+	<div data-role="popup" id="image2" data-overlay-theme="b" data-theme="b" data-corners="false">
+	  <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	      <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image2.jpg" style="max-height:512px;" alt="image2">
+	</div>
+
+	<div data-role="popup" id="image3" data-overlay-theme="b" data-theme="b" data-corners="false">
+	  <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	      <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image3.jpg" style="max-height:512px;" alt="image3">
+	</div>
+
+	<div data-role="popup" id="image4" data-overlay-theme="b" data-theme="b" data-corners="false">
+	  <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	      <img class="popphoto" src="http://web.engr.oregonstate.edu/~mcgrawp/classes/CS496/assignment1image4.jpg" style="max-height:512px;" alt="image4">
+	</div>
+
+	<a href="#navpage" class = "ui-btn">Return</a>
+      </div>	
+
+    </div>  
+
+    <div data-role="page" id="datapage">
+      
+      <div data-role="header">
+	<h1>Data Entry Page</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+	<p>Data entry page</p>
+	<a href="#navpage" class = "ui-btn">Return</a>
+      </div>	
+
+    </div>  
+
+
+  </body>
+
+</html>
