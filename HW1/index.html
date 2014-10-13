@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-
+  <!-- CS 496: Mobile and Cloud Development: Homework 1 -->
+  <!-- Author: Kamal Chaya -->
   <head>
+    <meta charset="utf-8"/>
     <meta name = "viewport" content = "width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    <link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script> 
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+    <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
+
+    <script>
+      $(document).bind('pageinit',function() {
+          $("#dataform").validate();
+      });
+    </script>  
+
     <title>CS496 HW1</title>
   </head>  
 
@@ -79,12 +92,23 @@
       </div>
 
       <div data-role="main" class="ui-content">
-	<p>Data entry page</p>
+	<form id = "dataform">
+	  Enter date: <input type="text" class="required" id="date-input" data-inline="true" data-role="date"><BR>
+	  Enter string: <input type="text" class="required" name="stringEntered"><BR> 
+	  <fieldset class="ui-field-contain">
+	    <label for="select-choice-0" class="select">Category menu</label>
+	    <select name="select-choice-0" id="select-choice-0">
+	      <option value="option1">Option 1</option>
+	      <option value="option2">Option 2</option>
+	      <option value="option3">Option 3</option>
+	    </select>
+	  </fieldset>
+	</form>
+	<button class="ui-btn">Submit</button>
 	<a href="#navpage" class = "ui-btn">Return</a>
       </div>	
 
     </div>  
-
 
   </body>
 
