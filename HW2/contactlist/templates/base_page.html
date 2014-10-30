@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="stylesheets/base_page_stylesheet.css">
+		<title>Contact list</title>
+	</head>
+	<body>
+		<h1>Contact List</h1>
+		<form action="/" method="post">
+			<fieldset>
+				<legend>Add contact info: </legend>
+				First name: <input type="text" name="first-name"><br>
+				Last name: <input type="text" name="last-name"><br>
+				Address: <input type="text" name="address"><br>
+				Phone number: <input type="text" name="phone"><br>
+							<input type="submit" value="Add"><br>
+			</fieldset>
+		</form>
+		<!-- Displays the contacts below -->
+		{% if form_content %}
+		<section>
+			<div id="view_contacts">
+				<table>
+					{% for key, value in form_content.iteritems() %}
+					<tr>
+						<th>{{ key|e }}</th>
+					</tr>
+
+					<tr>
+						<td>{{ value|e }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</section>
+		{% endif %}
+	</body>
+</html>

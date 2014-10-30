@@ -1,0 +1,18 @@
+body {
+	background-color: #66ffff;
+}
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Arial";
+}
+
+form {
+	background-color: #ccffff;
+	font-family: "Arial";
+}
+
+#view_contacts {
+	background-color: #ccffff;
+}
