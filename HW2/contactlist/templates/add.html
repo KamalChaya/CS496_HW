@@ -2,17 +2,17 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="stylesheets/base_page_stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 		<title>Contact list</title>
 	</head>
 	<body>
 		<h1>Contact List</h1>
 		<form action="/add" method="post">
-			<input type="hidden" name="action" value="add_channel">
+			<input type="hidden" name="action" value="add_contact">
 			<fieldset>
 				<legend>Add contact info: </legend>
-				First name: <input type="text" name="First name"><br>
-				Last name: <input type="text" name="Last name"><br>
+				First name: <input type="text" name="firstname"><br>
+				Last name: <input type="text" name="last name"><br>
 				Address: <input type="text" name="address"><br>
 				Phone number: <input type="text" name="phone"><br>
 							<input type="submit" value="Add"><br>
