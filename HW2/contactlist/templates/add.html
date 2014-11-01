@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- 
+Author: Kamal Chaya
+Oregon State University
+CS 496
+This code is based on and modified from the python videos uploaded by instructor
+-->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -7,17 +13,21 @@
 	</head>
 	<body>
 		<h1>Contact List</h1>
-		<form action="/add" method="post">
-			<input type="hidden" name="action" value="add_contact">
-			<fieldset>
-				<legend>Add contact info: </legend>
-				First name: <input type="text" name="firstname"><br>
-				Last name: <input type="text" name="last name"><br>
-				Address: <input type="text" name="address"><br>
-				Phone number: <input type="text" name="phone"><br>
-							<input type="submit" value="Add"><br>
-			</fieldset>
-		</form>
+
+		<!-- Form to add contact. I put it in its own div to style w/ CSS -->
+		<div id="add_contact_form">
+			<form action="/add" method="post">
+				<input type="hidden" name="action" value="add_contact">
+				<fieldset>
+					<legend>Add contact info: </legend>
+					First name: <input type="text" name="firstname"><br>
+					Last name: <input type="text" name="lastname"><br>
+					Address: <input type="text" name="address"><br>
+					Phone number: <input type="text" name="phone"><br>
+								<input type="submit" value="Add"><br>
+				</fieldset>
+			</form>
+		</div>
 		<!-- Displays the contacts below -->
 		{% if message %}
 			<section>
@@ -25,5 +35,10 @@
 				<p>{{ message }}
 			</section>
 		{% endif %}
+
+		<!-- Button to go back to the main page -->
+		<form action="/" method="get">
+			<input type="submit" value="Main page">
+		</form>
 	</body>
 </html>

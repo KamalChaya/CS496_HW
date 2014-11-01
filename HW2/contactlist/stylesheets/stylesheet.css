@@ -8,7 +8,11 @@ h1 {
 	font-family: "Arial";
 }
 
-form {
+h2 {
+	font-family: "Arial";
+}
+
+#add_contact_form {
 	background-color: #ccffff;
 	font-family: "Arial";
 }

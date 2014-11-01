@@ -1,6 +1,7 @@
- # Author: Kamal Chaya
+# Author: Kamal Chaya
 # Oregon State University
 # CS 496
+# This code is based on and modified from the python videos uploaded by instructor
 
 import webapp2
 
@@ -8,5 +9,6 @@ config = {'default-group':'base-data'}
 
 app = webapp2.WSGIApplication([
  	('/', 'base_page.mainHandler'),
- 	('/add', 'add.addHandler')
+ 	('/add', 'add.addHandler'),
+ 	('/edit', 'edit.editHandler'),
  	], debug =True, config=config)

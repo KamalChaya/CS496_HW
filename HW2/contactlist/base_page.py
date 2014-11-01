@@ -1,6 +1,7 @@
 # Author: Kamal Chaya
 # Oregon State University
 # CS 496
+# This code is based on and modified from the python videos uploaded by instructor 
 
 import os 
 import jinja2
@@ -27,9 +28,9 @@ class baseHandler(webapp2.RequestHandler):
 		self.response.write(template.render(template_vars))
 
 class mainHandler(webapp2.RequestHandler):
-	template_vars = {}
+	template_values = {}
+
 
 	def get(self):
 		template = JINJA_ENV.get_template('main.html')
 		self.response.write(template.render())
-	

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+Author: Kamal Chaya
+Oregon State University
+CS 496
+This code is based on and modified from the python videos uploaded by instructor
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+		<title>Contact list</title>
+	</head>
+	<body>
+		<!-- allow editing of contacts if there is at least 1 of them-->
+		{% if contacts|length > 0 %}
+		<section>
+			<h1>Edit contact List</h1>
+			{% for c in contacts %}
+			<a href='/edit?key={{ c.key }}&type=contact'>{{ c.name }}</a>
+			{% endfor %}
+		</section>
+		{% else %}
+		<section>
+			<h1>No contacts to edit</h1>
+		</section>
+		{% end if %}
+		{% if message %}
+		<section>
+			Result:<br>
+			{{ message }}
+		</section>
+		{% endif %}
+		<!-- Button to go back to the main page -->
+		<form action="/" method="get">
+			<input type="submit" value="Main page">
+		</form>
+	</body>
+</html>
