@@ -17,14 +17,14 @@ This code is based on and modified from the python videos uploaded by instructor
 		<section>
 			<h1>Edit contact List</h1>
 			{% for c in contacts %}
-			<a href='/edit?key={{ c.key }}&type=contact'>{{ c.name }}</a>
+			<a href='/edit?key={{ c.key }}&type=contact'>{{ c.firstName }}</a>
 			{% endfor %}
 		</section>
 		{% else %}
 		<section>
 			<h1>No contacts to edit</h1>
 		</section>
-		{% end if %}
+		{% endif %}
 		{% if message %}
 		<section>
 			Result:<br>

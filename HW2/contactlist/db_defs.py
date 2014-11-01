@@ -16,4 +16,5 @@ class Contact(ndb.Model):
 	lastName = ndb.StringProperty(required=True)
 	address = ndb.StringProperty(required=True)
 	phoneNum = ndb.StringProperty(required=True)
+	img = ndb.BlobKeyProperty(required=True)
 

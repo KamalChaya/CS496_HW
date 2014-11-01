@@ -6,6 +6,7 @@
 import webapp2
 import base_page
 from google.appengine.ext import ndb
+from google.appengine.ext import blobstore
 import db_defs
 
 class addHandler(base_page.baseHandler):
@@ -17,6 +18,7 @@ class addHandler(base_page.baseHandler):
 	def __init__(self, request, response):
 		self.initialize(request, response)
 		self.template_values = {} 
+		self.template_values['upload_url'] = blobstore.create_upload_url('/contactfile/add')
 
 	def render(self, page):
 		"""
@@ -26,7 +28,7 @@ class addHandler(base_page.baseHandler):
 		#Ancestor key
 		ancestorKey = ndb.Key(db_defs.Contact, self.app.config.get('default-group'))
 
-		#Returns a list of channels and puts it in the template values dictionary under the key name 'contacts'
+		#Returns a list of contacts and puts it in the template values dictionary under the key name 'contacts'
 		self.template_values['contacts'] = [{'firstName':x.firstName, 'key':x.key.urlsafe()} for x in db_defs.Contact.query(ancestor=ancestorKey).fetch()]	
 		base_page.baseHandler.render(self, page, self.template_values)
 
@@ -38,7 +40,7 @@ class addHandler(base_page.baseHandler):
 		#Render the add.html page 
 		self.render('add.html')
 
-	def post(self):
+	def post(self, img_key=None):
 		"""
 		A function to handle any HTTP POST requests.
 		"""
@@ -58,6 +60,9 @@ class addHandler(base_page.baseHandler):
 			contact.lastName = self.request.get('lastname')
 			contact.address = self.request.get('address')
 			contact.phoneNum = self.request.get('phone')
+
+			#Set the img to the key of the image uploaded by the user
+			contact.img = img_key
 
 			#put contact in data store
 			contact.put()

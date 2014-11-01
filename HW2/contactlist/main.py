@@ -10,5 +10,6 @@ config = {'default-group':'base-data'}
 app = webapp2.WSGIApplication([
  	('/', 'base_page.mainHandler'),
  	('/add', 'add.addHandler'),
+ 	('/contactfile/add', 'add_contact_file.AddContactFile'),
  	('/edit', 'edit.editHandler'),
  	], debug =True, config=config)
