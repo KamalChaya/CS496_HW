@@ -19,10 +19,28 @@ class editContactHandler(blobstore_handlers.BlobstoreUploadHandler):
 				blob_info = upload_files[0]
 				contact.img = blob_info.key()
 
-		#If the user chose to enter a new first name, set the firstName property
-		#to the value obtained from the form
+		#If the user chose to enter a new value for firstName, lastName, address, or
+		#phoneNum, get the value of it from the submitted form data, and assign that
+		#new value to the contact object
 		if self.request.get('firstname-action') == 'change':
-			contact.firstName = self.request.get('newFirstName')		
+			contact.firstName = self.request.get('newFirstName')
+		elif self.request.get('firstname-action') == 'none':
+			pass	
+
+		if self.request.get('lastname-action') == 'change':
+			contact.lastName = self.request.get('newLastName')
+		elif self.request.get('lastname-action') == 'none':
+			pass	
+
+		if self.request.get('address-action') == 'change':
+			contact.address = self.request.get('newAddress')
+		elif self.request.get('address-action') == 'none':
+			pass	
+
+		if self.request.get('phone-action') == 'change':
+			contact.phoneNum = self.request.get('newPhone')
+		elif self.request.get('phone-action') == 'none':
+			pass	
 
 		contact.put()
 		self.redirect('/edit?key=' + contact_key.urlsafe() + '&type=contact')
