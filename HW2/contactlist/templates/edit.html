@@ -16,8 +16,9 @@ This code is based on and modified from the python videos uploaded by instructor
 		{% if contacts|length > 0 %}
 		<section>
 			<h1>Edit contact List</h1>
+			<p>Click on the first name of the contact you would like to edit</p>
 			{% for c in contacts %}
-			<a href='/editform?key={{ c.key }}&type=contact'>{{ c.firstName }}</a>
+			<a href='/editform?key={{ c.key }}&type=contact'>{{ c.firstName }}</a><br>
 			{% endfor %}
 		</section>
 		{% else %}

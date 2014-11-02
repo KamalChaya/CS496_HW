@@ -21,7 +21,7 @@ class baseHandler(webapp2.RequestHandler):
 			loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + '/templates'),
 			extensions = ['jinja2.ext.autoescape'],
 			autoescape = True	
-			)
+			) 
 
 	def render(self, template, template_vars={}):
 		template = self.jinja2.get_template(template)

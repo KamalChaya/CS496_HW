@@ -14,41 +14,22 @@ This code is based on and modified from the python videos uploaded by instructor
 	<body>
 		<!-- Display the image if there is one -->
 		{% if img_url %}
-		<img src="{{ img_url }}">
+		<img src="{{ img_url }}"><br>
 		{% endif %}
-
-		{% if contacts|length > 0 %}
-		{% for c in contacts %}
-		First name: {{c.firstName}}<br>
-		Last name: {{c.lastName}}<br>
-		Address: {{c.address}}<br>
-		Phone Number: {{c.phoneNum}}<br>
-		{% endfor %}
-		{% endif %}
+ 
+		First name: {{contact.firstName}}<br>
+		Last name: {{contact.lastName}}<br>
+		Address: {{contact.address}}<br>
+		Phone Number: {{contact.phoneNum}}<br>
+	
 		<form method="post" action="{{ edit_url }}" enctype="multipart/form-data">
 			<input type="hidden" name="key" value="{{ contact.key.urlsafe() }}">
 			<label>Change contact image?</label><br>
 			<input type="radio" name="image-action" value="none">No<br>
 			<input type="radio" name="image-action" value="delete">Delete<br>
-			<input type="radio" name="image-action" value="change">Change image (select new image below)<br>
+			<input type="radio" name="image-action" value="change">Change/Add image (select new image below)<br>
 			Upload picture: <input type="file" name="contactImg"><br>
-			<label>Change first name?</label><br>
-			<input type="radio" name="firstname-action" value="none">No<br>
-			<input type="radio" name="firstname-action" value="change">Change first name (enter new name below)<br>
-			New first name: <input type="text" name="newFirstName"><br>
-			<label>Change last name?</label><br>
-			<input type="radio" name="lastname-action" value="none">No<br>
-			<input type="radio" name="lastname-action" value="change">Change last name (enter new name below)<br>
-			New last name: <input type="text" name="newLastName"><br>
-			<label>Change address?</label><br>
-			<input type="radio" name="address-action" value="none">No<br>
-			<input type="radio" name="address-action" value="change">Change address (enter new address below)<br>
-			New address: <input type="text" name="newAddress"><br>
-			<label>Change phone number?</label><br>
-			<input type="radio" name="phone-action" value="none">No<br>
-			<input type="radio" name="phone-action" value="change">Change phone number (enter new phone number below)<br>
-			New address: <input type="text" name="newPhone"><br>
-			<input type="submit" value="update"
+			<input type="submit" value="Update">
 		</form>
 		
 

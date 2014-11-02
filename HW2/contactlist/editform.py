@@ -6,6 +6,7 @@
 import webapp2
 import base_page
 from google.appengine.ext import ndb
+from google.appengine.api import images
 from google.appengine.ext import blobstore
 import db_defs
 
@@ -18,7 +19,7 @@ class editFormHandler(base_page.baseHandler):
 	def __init__(self, request, response):
 		self.initialize(request, response)
 		self.template_values = {} 
-		self.template_values['edit_url'] = blobstore.create_upload_url( '/edit/contact' )
+		self.template_values['edit_url'] = blobstore.create_upload_url( '/edit/contactimg' )
 	
 	def get(self):
 		"""

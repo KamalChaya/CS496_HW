@@ -18,7 +18,7 @@ class editHandler(base_page.baseHandler):
 	def __init__(self, request, response):
 		self.initialize(request, response)
 		self.template_values = {} 
-		self.template_values['edit_url'] = blobstore.create_upload_url( '/edit/contact' )
+		self.template_values['edit_url'] = blobstore.create_upload_url( '/editcontactimg' )
 	
 	def render(self, page):
 		"""
