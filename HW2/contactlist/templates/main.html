@@ -17,5 +17,25 @@ CS 496
 		<form action="/edit" method="get">
 			<input type="submit" value="Edit a contact"> 
 		</form>
+		
+		<!-- Conditionally generated HTML. If there are contacts, show them below. -->
+		{% if contacts|length > 0 %}
+		<br><strong>Contacts are shown below:</strong><br>
+		<section>
+			{% for c in contacts %}
+			<hr>
+				<!-- Use the image url template variable to show the image of the contact -->
+				{% if c.img_url %}
+				<br><img src="{{ c.img_url }}"><br>
+				{% endif %}	
+
+				<br>First name: {{ c.firstName }}
+				<br>Last name: {{ c.lastName }}
+				<br>Address: {{ c.address }}
+				<br>Phone number: {{ c.phoneNum }}
+
+			{% endfor %}
+		</section>
+		{% endif %}
 	</body>
 </html>
