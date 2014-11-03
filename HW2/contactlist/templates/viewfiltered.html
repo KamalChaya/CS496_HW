@@ -1,0 +1,58 @@
+<!--
+Author: Kamal Chaya
+Oregon State University
+CS 496
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+		<title>Contact list</title>
+	</head>
+
+	<body>
+		<h1>Contact list</h1>
+
+		{% if contacts|length > 0 %}
+
+		<!-- Display the state the contacts are from -->
+		{% for s in filterstate %}
+		<br><strong>Contacts from {{ s.state }} are shown below:</strong><br>
+		{% endfor %}
+		<section>
+			<!-- Go through all of the contacts and display them -->
+			{% for c in contacts %}
+			<hr>
+						<table>
+						<!-- Use the image url template variable to show the image of the contact -->
+							<tr>
+								<td>	
+								{% if c.img_url %}
+								<br><img src="{{ c.img_url }}"><br>
+								{% endif %}
+								</td>	
+
+								<td>
+								<br>{{ c.firstName }} {{ c.lastName }}
+								<br>{{ c.addressLine1 }}
+								{% if addressLine2 %}
+								{{ c.addressLine2 }}
+								{% endif %}
+								<br>{{c.city}} {{ c.state }} {{ c.zipcode }}
+								<br>{{ c.phoneNum }}
+								<br>{{ c.email }}
+								</td>
+							<tr>
+						<table>
+			{% endfor %}
+		</section>
+		{% endif %}
+
+		<!-- Button to go back to the main page -->
+		<form action="/" method="get">
+			<input type="submit" value="Main page">
+		</form>
+
+	</body>
+
+</html>

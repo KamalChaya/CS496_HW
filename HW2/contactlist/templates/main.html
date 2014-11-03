@@ -17,7 +17,8 @@ CS 496
 		<form action="/edit" method="get">
 			<input type="submit" value="Edit a contact"> 
 		</form>
-		<form action="/viewfilter" method="get">
+		<br>View contacts from: 
+		<form action="/viewfilter" method="post">
 					<select name="state">
 					<option value="AL">Alabama</option>
 		            <option value="AK">Alaska</option>
@@ -71,28 +72,37 @@ CS 496
 		            <option value="WI">Wisconsin</option>
 		            <option value="WY">Wyoming</option>
 				    </select>
+				    <input type="submit" value="View">
 		</form>
 
 
 		<!-- Conditionally generated HTML. If there are contacts, show them below. -->
 		{% if contacts|length > 0 %}
-		<br><strong>Contacts are shown below:</strong><br>
+		<br><strong>All current contacts are shown below:</strong><br>
 		<section>
 			{% for c in contacts %}
 			<hr>
-				<!-- Use the image url template variable to show the image of the contact -->
-				{% if c.img_url %}
-				<br><img src="{{ c.img_url }}"><br>
-				{% endif %}	
+						<table>
+						<!-- Use the image url template variable to show the image of the contact -->
+							<tr>
+								<td>	
+								{% if c.img_url %}
+								<br><img src="{{ c.img_url }}"><br>
+								{% endif %}
+								</td>	
 
-				<br>{{ c.firstName }} {{ c.lastName }}
-				<br>{{ c.addressLine1 }}
-				{% if addressLine2 %}
-				{{ c.addressLine2 }}
-				{% endif %}
-				<br>{{c.city}} {{ c.state }} {{ c.zipcode }}
-				<br>{{ c.phoneNum }}
-				<br>{{ c.email }}
+								<td>
+								<br>{{ c.firstName }} {{ c.lastName }}
+								<br>{{ c.addressLine1 }}
+								{% if addressLine2 %}
+								{{ c.addressLine2 }}
+								{% endif %}
+								<br>{{c.city}} {{ c.state }} {{ c.zipcode }}
+								<br>{{ c.phoneNum }}
+								<br>{{ c.email }}
+								</td>
+							<tr>
+						<table>
 
 			{% endfor %}
 		</section>

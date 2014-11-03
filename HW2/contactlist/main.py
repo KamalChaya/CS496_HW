@@ -13,5 +13,6 @@ app = webapp2.WSGIApplication([
  	('/contactfile/add', 'add_contact_file.AddContactFile'),
  	('/editform', 'editform.editFormHandler'),
  	('/edit', 'edit.editHandler'),
- 	('/edit/contact', 'edit_contact.editContactHandler')
+ 	('/edit/contact', 'edit_contact.editContactHandler'),
+ 	('/viewfilter', 'viewfilter.viewFilterHandler'),
  	], debug =True, config=config)
