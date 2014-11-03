@@ -32,14 +32,39 @@ class editContactHandler(blobstore_handlers.BlobstoreUploadHandler):
 		elif self.request.get('lastname-action') == 'none':
 			pass	
 
-		if self.request.get('address-action') == 'change':
-			contact.address = self.request.get('newAddress')
+		if self.request.get('addressline1-action') == 'change':
+			contact.addressLine1 = self.request.get('newAddressLine1')
 		elif self.request.get('address-action') == 'none':
 			pass	
+
+		if self.request.get('addressline2-action') == 'change':
+			contact.addressLine2 = self.request.get('newAddressLine2')
+		elif self.request.get('address-action') == 'none':
+			pass
 
 		if self.request.get('phone-action') == 'change':
 			contact.phoneNum = self.request.get('newPhone')
 		elif self.request.get('phone-action') == 'none':
+			pass	
+
+		if self.request.get('zip-action') == 'change':
+			contact.zipcode = self.request.get('newZip')
+		elif self.request.get('zip-action') == 'none':
+			pass
+
+		if self.request.get('state-action') == 'change':
+			contact.state = self.request.get('state')
+		elif self.request.get('state-action') == 'none':
+			pass
+
+		if self.request.get('city-action') == 'change':
+			contact.city = self.request.get('newCity')
+		elif self.request.get('city-action') == 'none':
+			pass
+
+		if self.request.get('email-action') == 'change':
+			contact.email = self.request.get('newEmail')
+		elif self.request.get('email-action') == 'none':
 			pass	
 
 		contact.put()

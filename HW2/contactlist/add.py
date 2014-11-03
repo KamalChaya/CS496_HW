@@ -58,8 +58,13 @@ class addHandler(base_page.baseHandler):
 			#the user into the form
 			contact.firstName = self.request.get('firstname')
 			contact.lastName = self.request.get('lastname')
-			contact.address = self.request.get('address')
 			contact.phoneNum = self.request.get('phone')
+			contact.city = self.request.get('city')
+			contact.zipcode = self.request.get('zip')
+			contact.addressLine1 = self.request.get('addressLine1')
+			contact.addressLine2 = self.request.get('addressLine2')
+			contact.state = self.request.get('state')
+			contact.email = self.request.get('email')
 
 			#Set the img to the key of the image uploaded by the user
 			contact.img = img_key

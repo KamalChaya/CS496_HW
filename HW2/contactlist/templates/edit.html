@@ -16,17 +16,20 @@ This code is based on and modified from the python videos uploaded by instructor
 		{% if contacts|length > 0 %}
 		<section>
 			<h1>Edit contact List</h1>
-			<br>Click on a contact you would like to edit<br>
+			<br>Choose a contact to edit<br>
 			
 			{% for c in contacts %}
+			
 				<hr>
 				{% if c.img_url %}
 				<br><img src="{{ c.img_url }}"><br>
 				{% endif %}
-			<br>First name: <a href='/editform?key={{ c.key }}&type=contact'>{{ c.firstName }}</a>
-			<br>Last name: <a href='/editform?key={{ c.key }}&type=contact'>{{ c.lastName }}</a>
-			<br>Address: <a href='/editform?key={{ c.key }}&type=contact'>{{ c.address }}</a>
-			<br>phone number: <a href='/editform?key={{ c.key }}&type=contact'>{{ c.phoneNum }}</a>
+			<br>{{ c.firstName }} {{ c.lastName }}
+			<br>{{ c.addressLine1 }} {{ c.addressLine2 }}
+			<br>{{ c.city }} {{ c.state }} {{ c.zipcode }}
+			<br>{{ c.phoneNum }}
+			<br>{{ c.email }}
+			<br><a href='/editform?key={{ c.key }}&type=contact'>Edit this contact</a>
 			{% endfor %}
 		</section>
 		{% else %}

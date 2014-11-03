@@ -31,7 +31,7 @@ class editHandler(base_page.baseHandler):
 		ancestorKey = ndb.Key(db_defs.Contact, self.app.config.get('default-group'))
 
 		#Returns a list of contacts (with all of their attributes) and puts it in the template values dictionary under the key name 'contacts'
-		self.template_values['contacts'] = [{'firstName':x.firstName, 'lastName':x.lastName, 'address':x.address, 'phoneNum':x.phoneNum, 'img_url':images.get_serving_url(x.img, crop=True, size=64), 'key':x.key.urlsafe()} for x in db_defs.Contact.query(ancestor=ancestorKey).fetch()]	
+		self.template_values['contacts'] = [{'firstName':x.firstName, 'lastName':x.lastName, 'addressLine1':x.addressLine1, 'addressLine2':x.addressLine2, 'phoneNum':x.phoneNum, 'state':x.state, 'city':x.city, 'zipcode':x.zipcode, 'email':x.email, 'img_url':images.get_serving_url(x.img, crop=True, size=64), 'key':x.key.urlsafe()} for x in db_defs.Contact.query(ancestor=ancestorKey).fetch()]	
 		base_page.baseHandler.render(self, page, self.template_values)
 
 	def get(self):

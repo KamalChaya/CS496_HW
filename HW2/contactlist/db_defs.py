@@ -14,7 +14,12 @@ class Contact(ndb.Model):
 	'''
 	firstName = ndb.StringProperty(required=True)
 	lastName = ndb.StringProperty(required=True)
-	address = ndb.StringProperty(required=True)
+	email = ndb.StringProperty(required=True)
+	addressLine1 = ndb.StringProperty(required=True)
+	addressLine2 = ndb.StringProperty()
+	state = ndb.StringProperty(required=True)
+	city = ndb.StringProperty(required=True)
+	zipcode = ndb.StringProperty(required=True)
 	phoneNum = ndb.StringProperty(required=True)
 	img = ndb.BlobKeyProperty()
 
