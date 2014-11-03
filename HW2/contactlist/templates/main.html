@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 <!--
 Author: Kamal Chaya
 Oregon State University
 CS 496
+This code is based on and modified from the python videos uploaded by instructor
 -->
-<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 		<title>Contact list</title>
 	</head>
@@ -78,8 +80,8 @@ CS 496
 
 		<!-- Conditionally generated HTML. If there are contacts, show them below. -->
 		{% if contacts|length > 0 %}
-		<br><strong>All current contacts are shown below:</strong><br>
 		<section>
+			<h2>All contacts shown below</h2>
 			{% for c in contacts %}
 			<hr>
 					<div style = "width: fit-content">
@@ -88,7 +90,7 @@ CS 496
 							<tr>
 								<td>	
 								{% if c.img_url %}
-								<br><img src="{{ c.img_url }}"><br>
+								<br><img src="{{ c.img_url }}" alt=""><br>
 								{% endif %}
 								</td>	
 
@@ -102,8 +104,8 @@ CS 496
 								<br>{{ c.phoneNum }}
 								<br>{{ c.email }}
 								</td>
-							<tr>
-						<table>
+							</tr>
+						</table>
 					</div>			
 			{% endfor %}
 		</section>
